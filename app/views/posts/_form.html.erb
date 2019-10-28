@@ -1,0 +1,14 @@
+<%= form_with model: @posts, local: true do |f| %>
+
+<div class="form-group">
+<label for="">タイトル:</label>
+<%= f.text_field :title, placeholder: 'enter title', class: 'form-control' %>
+</div>
+
+<div class="form-group">
+<label for="">内容:</label>
+<%= f.text_area :body, placeholder: 'enter body text', class: 'form-control' %>
+</div>
+<%= f.submit  class: 'btn btn-primary' %>
+
+<% end %>
