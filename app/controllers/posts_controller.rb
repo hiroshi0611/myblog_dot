@@ -4,7 +4,6 @@ class PostsController < ApplicationController
     end
 
     def show
-        # @posts = Post.new
         @posts = Post.find(params[:id])
     end
 
@@ -31,13 +30,20 @@ class PostsController < ApplicationController
     def update
         @posts = Post.find(params[:id])
         if @posts.update(post_params)
-            flash[:success] = '登録成功しました'
+            flash[:success] = '成功しました'
             redirect_to root_path
         else
           flash.now[:danger] = "項目を入力してください"
           render :new
         end
 
+    end
+
+    def destroy
+        @posts = Post.find(params[:id])
+        @posts.destroy
+        flash[:success] = '成功しました'
+        redirect_to root_path
     end
 
     def post_params

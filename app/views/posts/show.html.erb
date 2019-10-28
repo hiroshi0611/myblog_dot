@@ -12,5 +12,6 @@
 <td><%= @posts.body %></td>
 <td><%= @posts.created_at %></td>
 <td><%= link_to '編集', edit_post_path ,class: 'btn btn-primary' %></td>
+<td><%= link_to '削除', post_path(@posts.id),method: :delete,  class: "btn btn-danger",data: {confirm: "本当に削除しますか？"} %></td>
 </tr>
 </table>
