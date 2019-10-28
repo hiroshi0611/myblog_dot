@@ -18,10 +18,26 @@ class PostsController < ApplicationController
             flash[:success] = '登録成功しました'
             redirect_to root_path
         else
-          flash[:danger] = "入力してください"
+          flash.now[:danger] = "項目を入力してください"
           render :new
         end
         
+    end
+
+    def edit
+        @posts = Post.find(params[:id])
+    end
+
+    def update
+        @posts = Post.find(params[:id])
+        if @posts.update(post_params)
+            flash[:success] = '登録成功しました'
+            redirect_to root_path
+        else
+          flash.now[:danger] = "項目を入力してください"
+          render :new
+        end
+
     end
 
     def post_params

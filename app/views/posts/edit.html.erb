@@ -1,4 +1,4 @@
-<h2>新規作成</h2>
+<h2>編集画面</h2>
 
 <%= form_with model: @posts, local: true do |f| %>
 
@@ -12,6 +12,6 @@
 <%= f.text_area :body, placeholder: 'enter body text', class: 'form-control' %>
 </div>
 
-<%= f.submit 'Create New Post', class: 'btn btn-primary' %>
+<%= f.submit 'Update New Post', class: 'btn btn-primary' %>
 
 <% end %>
